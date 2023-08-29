@@ -23,5 +23,5 @@ About 35k-40k needed for SuperHOT-8K patched neural networks with context window
 #### 2. Start using the start.bat script
 Just place the .json file next to the start.bat script and then run it, the output of the program will create a trimmed.json file in the same folder
 #### 3. Web Interface
-Just run the `app.py` file in the flask-web folder and follow the link http://localhost:5001
+Just run the `app.py` file in the flask-web folder and follow the link http://localhost:5002
  - For security reasons, it is best not to use it outside the local network
