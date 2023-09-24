@@ -69,7 +69,16 @@ def webmanifest():
 def icon(icon_filename):
     return send_from_directory(os.path.join(app.root_path, 'static', 'icons'),
                                icon_filename, mimetype='image/png')
-    
+                               
+@app.route('/static/css/<css_filename>')
+def css(css_filename):
+    return send_from_directory(os.path.join(app.root_path, 'static', 'css'),
+                               css_filename, mimetype='text/css')
+                               
+@app.route('/static/js/<js_filename>')
+def javascript(js_filename):
+    return send_from_directory(os.path.join(app.root_path, 'static', 'js'),
+                               js_filename, mimetype='application/javascript')
 
 if __name__ == '__main__':
     delete_json_files()

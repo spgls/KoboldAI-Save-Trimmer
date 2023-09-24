@@ -4,97 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KoboldAI Trimmer</title>
-	<link rel="icon" href="/favicon.ico" type="image/x-icon">
-	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-	<link rel="manifest" href="/site.webmanifest">
-    <style>
-	
-        body {
-    background: linear-gradient(to bottom right, #e84b92, #6730af);
-    background-size: 200% 200%;
-    animation: pulse 5s infinite alternate;
-    font-family: Arial, sans-serif;
-    color: #fff;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-	}
-
-	@keyframes pulse {
-		0% {
-			background-position: 0 0;
-		}
-		100% {
-			background-position: 100% 100%;
-		}
-	}
-
-        h1 {
-            text-align: center;
-            margin: 0 0 20px;
-        }
-
-        form {
-            background-color: rgba(255, 255, 255, 0.1);
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-            width: 80%;
-            max-width: 400px;
-            text-align: center;
-        }
-
-        input[type="file"] {
-            display: block;
-            margin: 0 auto;
-            margin-bottom: 10px;
-            padding: 10px;
-            border: none;
-            background-color: rgba(255, 255, 255, 0.5);
-            border-radius: 5px;
-            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
-            max-width: 100%;
-            box-sizing: border-box;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        input[type="number"] {
-            width: 100%;
-            padding: 10px;
-            border: none;
-            background-color: rgba(255, 255, 255, 0.5);
-            border-radius: 5px;
-            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
-            box-sizing: border-box;
-        }
-
-        input[type="submit"] {
-            display: block;
-            margin: 10px auto 0;
-            padding: 10px 20px;
-            border: none;
-            background-color: #6730af;
-            color: #fff;
-            border-radius: 20px;
-            cursor: pointer;
-            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
-        }
-    </style>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <link rel="stylesheet" href="{{ url_for('css', css_filename='styles.css') }}">
+    <link href="/static/css/tailwind.css" rel="stylesheet">
 </head>
 <body>
-    <form action="/" method="POST" enctype="multipart/form-data">
-        <h1>KoboldAI Trimmer</h1>
-        <input type="file" name="file">
-        <label for="amount">Number of context to retain:</label>
-        <input type="number" name="amount" id="amount" value="10000">
-        <input type="submit" value="Save">
+<div class="flex items-center justify-center h-screen flex-container">
+    <form action="/" method="POST" enctype="multipart/form-data" class="bg-opacity-10 p-4 sm:p-8 rounded-lg shadow-lg w-full max-w-screen-md text-center transform scale-125 custom-form">
+        <h1 class="text-2xl font-semibold mb-4">KoboldAI Trimmer</h1>
+        <div class="flex items-center">
+            <label for="file-upload" class="block cursor-pointer bg-purple-600 text-white px-3 py-2 rounded-full animation" id="file-label">
+                <span id="file-label-text">Choose a File</span>
+                <input type="file" name="file" id="file-upload" class="hidden" accept=".json">
+            </label>
+            <span id="file-name" class="ml-4 text-gray-500">No file chosen</span>
+        </div>
+        <label for="amount" class="block mt-4 mb-2">Number of context to retain:</label>
+        <input type="number" name="amount" id="amount" value="10000" class="w-full p-2 border rounded-lg bg-opacity-50 shadow-md custom-input animation">
+        <input type="submit" value="Save" class="block mx-auto mt-6 px-6 py-2 bg-purple-600 text-white rounded-full cursor-pointer custom-button animation">
     </form>
+</div>
+<script src="/static/js/index.js"></script>
 </body>
 </html>

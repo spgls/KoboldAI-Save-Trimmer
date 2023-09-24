@@ -1,2 +1,7 @@
 flask-web/uploads/
 console-app/*.json
+flask-web/*.json
+flask-web/input.css
+flask-web/tailwind.config.js
+dist/*
+flask-web/dist/output.css
