@@ -3,6 +3,11 @@ import json, os, time, threading
 
 app = Flask(__name__)
 
+uploads_dir = os.path.join(os.path.dirname(__file__), 'uploads')
+
+if not os.path.exists(uploads_dir):
+    os.makedirs(uploads_dir)
+
 def delete_json_files():
     upload_dir = './uploads'
     for filename in os.listdir(upload_dir):
